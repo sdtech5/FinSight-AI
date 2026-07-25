@@ -72,4 +72,4 @@ def run_graph(messages):
         }
     )
 
-    return result["messages"]
+    return result
