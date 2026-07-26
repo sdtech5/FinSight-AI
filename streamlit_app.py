@@ -34,7 +34,11 @@ if prompt:
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    response = requests.post(API_URL, json={"message": prompt})
+    response = requests.post(
+        API_URL,
+        json={"message": prompt}
+    )
+
     answer = response.json()["response"]
 
     st.session_state.messages.append(

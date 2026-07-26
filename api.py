@@ -18,6 +18,17 @@ def chat(request: ChatRequest):
         HumanMessage(content=request.message)
     ])
 
+    content = result["messages"][-1].content
+
+    if isinstance(content, list):
+        response = "".join(
+            part.get("text", "")
+            for part in content
+            if isinstance(part, dict)
+        )
+    else:
+        response = content
+
     return {
-    "response": result["messages"][-1].content
-    }   
+        "response": response
+    }
