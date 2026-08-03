@@ -9,7 +9,17 @@ st.set_page_config(
 )
 
 st.title("📈 FinSight AI")
-st.caption("AI-powered Financial Assistant")
+st.subheader("AI-powered Financial Research Assistant")
+st.caption(
+    "Market insights, company research, and financial analysis powered by AI."
+)
+
+st.info(
+    "⚠️ The information provided by FinSight AI is generated using AI and publicly available financial data. "
+    "While every effort is made to provide accurate and up-to-date information, it should not be considered "
+    "professional financial advice or the sole basis for investment decisions. Please conduct your own research "
+    "and consult a qualified financial advisor before making any investment decisions."
+)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -34,12 +44,16 @@ if prompt:
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    response = requests.post(
+    with st.spinner("Thinking..."):
+        response = requests.post(
         API_URL,
-        json={"message": prompt}
-    )
+        json={"messages": st.session_state.messages}
+        )
 
-    answer = response.json()["response"]
+    if response.status_code == 200:
+        answer = response.json()["response"]
+    else:
+        answer = f"Error {response.status_code}: {response.text}"
 
     st.session_state.messages.append(
         {

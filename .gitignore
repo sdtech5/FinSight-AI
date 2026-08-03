@@ -1,4 +1,22 @@
+# Virtual Environment
+.venv/
 venv/
-__pycache__/
+
+# Environment Variables
 .env
+
+# Python
+__pycache__/
 *.pyc
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Streamlit
+.streamlit/secrets.toml

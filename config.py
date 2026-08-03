@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 
 # Load environment variables FIRST
 load_dotenv()
@@ -8,10 +8,14 @@ load_dotenv()
 # Import tools AFTER environment variables are loaded
 from tools import tools
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-3.6-flash",
+# llm = ChatGroq(
+#     model="openai/gpt-oss-120b",
+#     temperature=0
+# )
+
+llm = ChatGroq(
+    model="qwen/qwen3.6-27b",
     temperature=0,
-    google_api_key=os.getenv("GEMINI_API_KEY"),
 )
 
 llm = llm.bind_tools(tools)
