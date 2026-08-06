@@ -1,57 +1,115 @@
-# FinSight AI
+# 📈 FinSight AI
 
-An AI-powered financial assistant built using **LangGraph**, **LangChain**, **Groq Llama 3.3**, and **Tavily Search**.
+An AI-powered Financial Research Assistant built using **LangGraph**, **FastAPI**, **Streamlit**, **Groq (Qwen 3.6-27B)**, **Tavily Search**, and **Yahoo Finance**.
 
-FinSight AI demonstrates how an AI agent can reason about user queries, decide whether a tool is required, execute that tool, and return a natural language response. This project was built as the first project in a larger AI Engineering portfolio.
+FinSight AI is an end-to-end AI application that enables users to research stocks, analyze companies, understand market news, and have contextual financial conversations using real-time market data and web search.
 
----
-
-# Features
-
-* Conversational AI Assistant
-* LangGraph-based agent workflow
-* Calculator tool integration
-* Tavily web search integration
-* Intelligent tool routing
-* Stateful conversations using LangGraph
-* Modular project structure
+This project was built as **Project 1** in my AI Engineering portfolio to demonstrate modern AI application architecture and deployment.
 
 ---
 
-# Tech Stack
+# 🌐 Live Demo
 
-* Python
-* LangGraph
-* LangChain
-* Groq (Llama 3.3 70B)
-* Tavily Search API
+### Frontend (Streamlit)
+
+https://finsight-ai-6sxs22zfjlkk9msfkbvf9v.streamlit.app/
+
+### Backend API (FastAPI)
+
+https://finsight-ai-api-8slx.onrender.com
+
+> **Note**
+>
+> The backend is hosted on Render's free tier. The first request after a period of inactivity may take up to a minute while the server wakes up.
 
 ---
 
-# Project Structure
+# ✨ Features
+
+- AI-powered conversational financial assistant
+- Context-aware multi-turn conversations
+- Real-time financial market research
+- Live stock price retrieval
+- Latest financial news search
+- AI tool calling using LangGraph
+- FastAPI REST backend
+- Streamlit frontend
+- Modular architecture
+- Cloud deployment
+
+---
+
+# 🏗️ Architecture
+
+```
+User
+   │
+   ▼
+Streamlit (Frontend)
+   │
+HTTPS
+   ▼
+FastAPI (Render)
+   │
+   ▼
+LangGraph
+   │
+   ├── Tavily Search
+   ├── Yahoo Finance
+   └── Groq (Qwen 3.6-27B)
+```
+
+---
+
+# 🛠️ Tech Stack
+
+- Python
+- LangGraph
+- LangChain
+- FastAPI
+- Streamlit
+- Groq
+- Qwen 3.6-27B
+- Tavily Search
+- Yahoo Finance
+- Pydantic
+- Git
+- GitHub
+- Render
+
+---
+
+# 📂 Project Structure
 
 ```
 FinSight-AI/
 │
+├── api.py
 ├── app.py
 ├── config.py
 ├── graph.py
-├── llm.py
 ├── prompts.py
-├── requirements.txt
-├── state.py
+├── streamlit_app.py
 ├── tools.py
-└── README.md
+├── requirements.txt
+├── README.md
+└── .env
 ```
 
 ---
 
-# Installation
+# 🚀 Installation
 
 Clone the repository
 
 ```bash
 git clone https://github.com/sdtech5/FinSight-AI.git
+```
+
+Move into the project
+
+```bash
+cd FinSight-AI
 ```
 
 Install dependencies
@@ -60,75 +118,104 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Create a `.env` file containing your API keys.
+Create a `.env` file
 
-Example:
-
-```
-GROQ_API_KEY=YOUR_KEY
-TAVILY_API_KEY=YOUR_KEY
+```text
+GROQ_API_KEY=YOUR_API_KEY
+TAVILY_API_KEY=YOUR_API_KEY
 ```
 
 ---
 
-# Running the Project
+# ▶️ Running Locally
+
+### Start the FastAPI backend
 
 ```bash
-python app.py
+uvicorn api:app --reload
+```
+
+Backend runs on
+
+```
+http://127.0.0.1:8000
 ```
 
 ---
 
-# Example Questions
+### Start the Streamlit frontend
 
-* What is 125 × 48?
-* Who is the CEO of NVIDIA?
-* What are the latest quarterly earnings of Asian Paints?
-* Summarize today's AI news.
+```bash
+streamlit run streamlit_app.py
+```
 
----
+Frontend runs on
 
-# Current Version
-
-**Version 1.0**
-
-Current capabilities
-
-* LangGraph workflow
-* Calculator tool
-* Tavily Search
-* Tool routing
-* Stateful conversations
+```
+http://localhost:8501
+```
 
 ---
 
-# Roadmap
+# 💬 Example Questions
 
-## Version 1.1
-
-* Finance API integration
-* FastAPI backend
-* Structured outputs
-* Improved prompt engineering
-* Better error handling
-* Logging
-* Code refactoring
+- Current price of Infosys
+- Latest news on TCS
+- Compare Infosys and TCS
+- Should I hold Cholamandalam Finance?
+- Explain the impact of RBI interest rate decisions on banking stocks.
+- Compare large-cap and flexi-cap mutual funds.
 
 ---
 
-# Learning Objectives
+# 📚 Learning Objectives
 
 This project demonstrates practical implementation of:
 
-* AI Agents
-* LangGraph
-* Tool Calling
-* State Management
-* Prompt Engineering
-* External Tool Integration
+- AI Agents
+- LangGraph Workflows
+- Tool Calling
+- Prompt Engineering
+- Stateful Conversations
+- FastAPI REST APIs
+- Streamlit Applications
+- Cloud Deployment
+- External API Integration
+- Production-style Git Workflow
 
 ---
 
-# License
+# 📈 Current Version
 
-This project is intended for learning and portfolio purposes.
+**Version 1.3**
+
+### Implemented
+
+- AI Agent using LangGraph
+- Financial Research Assistant
+- FastAPI Backend
+- Streamlit Frontend
+- Tool Calling
+- Yahoo Finance Integration
+- Tavily Web Search
+- Context-aware Conversations
+- Cloud Deployment
+- Public Demo
+
+---
+
+# 🔮 Future Improvements
+
+- Portfolio Analysis
+- Document Upload & Analysis
+- RAG-based Financial Knowledge Base
+- Multi-LLM Routing
+- Automatic Model Fallback
+- Authentication
+- Chat History Persistence
+
+---
+
+# 📄 License
+
+This project was built for educational purposes and portfolio demonstration.
