@@ -37,6 +37,7 @@ def chat(request: ChatRequest):
     try:
         result = run_graph(messages)
 
+        print(result["messages"])
         content = result["messages"][-1].content
 
         if isinstance(content, list):
