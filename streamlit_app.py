@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 
-API_URL = "http://127.0.0.1:8000/chat"
+API_URL = "https://finsight-ai-api-8slx.onrender.com/chat"
 
 st.set_page_config(
     page_title="FinSight AI",
