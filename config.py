@@ -1,9 +1,10 @@
 import os
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
 
 # Load environment variables FIRST
+
 load_dotenv()
+from langchain_groq import ChatGroq
 
 # Import tools AFTER environment variables are loaded
 from tools import tools

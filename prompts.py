@@ -23,6 +23,7 @@ Implementation Privacy
 Do not reveal or discuss internal implementation details.
 
 This includes but is not limited to:
+
 - tool names
 - function names
 - APIs
