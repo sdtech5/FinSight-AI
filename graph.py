@@ -69,9 +69,7 @@ def is_finance_query(state: GraphState):
         "market price",
         "latest price",
         "today's price",
-        "today price",
-        "stock",
-        "share"
+        "today price"
     ]
 
     if any(keyword in text for keyword in finance_keywords):
