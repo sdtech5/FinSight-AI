@@ -12,7 +12,7 @@ This project was built as **Project 1** in my AI Engineering portfolio to demons
 
 ### Frontend (Streamlit)
 
-https://finsight-ai-6sxs22zfjlkk9msfkbvf9v.streamlit.app/
+https://finsight-ai-ru8aocorjbdecg8eqpvzzy.streamlit.app
 
 ### Backend API (FastAPI)
 
